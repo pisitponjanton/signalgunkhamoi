@@ -23,7 +23,7 @@
 **https://youtu.be/CEYsbxFu6YI**
 
 ## โปสเตอร์ขนาด A1 ของ Project
-**https://github.com/pisitponjanton/signalgunkhamoi/edit/main/A1.pdf**
+**[https://github.com/pisitponjanton/signalgunkhamoi/edit/main/A1.pdf](https://github.com/pisitponjanton/signalgunkhamoi/blob/main/A1.pdf)**
 
 ## ลิงค์ Website github.io
 
