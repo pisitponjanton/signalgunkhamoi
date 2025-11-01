@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>บทคัดย่อ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --page-width: 820px;
+    --base-size: 20px;
+    --line: 1.9;
+  }
+
+  body{
+    font-family: "Sarabun", "TH SarabunPSK", sans-serif;
+    font-size: var(--base-size);
+    line-height: var(--line);
+    color: #111;
+    background: #fff;
+    margin: 0;
+  }
+
+  .page{
+    width: min(92%, var(--page-width));
+    margin: 56px auto 80px;
+  }
+
+  h2{
+    text-align: center;
+    margin: 0 0 12px;
+    font-weight: 700;
+  }
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    margin: 8px 0 20px;
+  }
+
+  td{
+    vertical-align: top;
+    padding: 2px 0;
+  }
+
+  .label{
+    width: 28%;
+    white-space: nowrap;
+  }
+
+  .value::before{
+    content: " : ";
+    white-space: pre;
+  }
+
+  .multiline{
+    display: grid;
+    gap: 2px;
+  }
+
+  .indent{
+    text-indent: 2em;
+    margin: 0 0 10px;
+    text-align: justify;
+  }
+
+  .source{
+    margin-top: 15px;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 8px;
+  }
+
+  /* ส่วนรูปโปสเตอร์ */
+  .poster {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .poster img {
+    width: 100%;
+    max-width: 700px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  /* ฝังคลิป YouTube */
+  .video {
+    text-align: center;
+    margin: 30px 0;
+  }
+
+  iframe {
+    width: 100%;
+    max-width: 720px;
+    height: 405px;
+    border: none;
+    border-radius: 8px;
+  }
+
+  @page{ margin: 25mm; }
+  @media print{
+    body{ background:#fff; }
+    .page{ width: 100%; margin: 0; }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <h2>บทคัดย่อ</h2>
+
+    <table>
+      <tr>
+        <td class="label">ชื่อของโครงการ</td>
+        <td class="value">Signal Gunkhamoi (Anti-Theft System)</td>
+      </tr>
+
+      <tr>
+        <td class="label">โดย</td>
+        <td class="value">
+          <div class="multiline">
+            <div>นายพิสิษฐ์ภณ จันทร 67070119</div>
+            <div>นายภาษาณฑ์ ศิวธนเณศ 67070133</div>
+            <div>นายวศิน จันทร์ก้อน 67070161</div>
+            <div>นางพิมพ์มณี นิมิตราภรณ์ 67070311</div>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="label">สาขาวิชา</td>
+        <td class="value">เทคโนโลยีสารสนเทศ (Information Technology)</td>
+      </tr>
+      <tr>
+        <td class="label">ปีการศึกษา</td>
+        <td class="value">2568</td>
+      </tr>
+    </table>
+
+    <p class="indent">
+      โครงงาน Signal Gunkhamoi เป็นระบบอุปกรณ์ป้องกันการโจรกรรมอัจฉริยะ (Smart Anti-Theft System)
+      ที่พัฒนาขึ้นโดยใช้ Arduino UNO R4 WiFi ทำหน้าที่ตรวจจับการเคลื่อนไหวของวัตถุหรือบุคคลผ่าน
+      Ultrasonic Sensor (HC-SR04) หากมีการตรวจพบสิ่งเคลื่อนไหว ระบบจะส่งเสียงเตือนผ่าน Buzzer
+      และส่งข้อมูลแจ้งเตือนผ่านเครือข่าย Wi-Fi ไปยัง API Server ซึ่งพัฒนาโดยใช้ Next.js / Node.js
+      เพื่อจัดเก็บข้อมูลลงฐานข้อมูลและแจ้งเตือนไปยังผู้ใช้ผ่านทางอีเมล
+    </p>
+
+    <p class="indent">
+      อุปกรณ์สามารถเข้าสู่โหมดการตั้งค่า Wi-Fi ได้ผ่านระบบ Access Point Mode เพื่อรับค่าการเชื่อมต่อและ
+      Device Code ซึ่งจะถูกบันทึกลงใน EEPROM สำหรับการทำงานในโหมดปกติ ระบบจะใช้ข้อมูลที่บันทึกไว้
+      เชื่อมต่อกับเครือข่ายอัตโนมัติและทำงานตรวจจับทันทีเมื่อเปิดเครื่อง โดยมี LED แสดงสถานะการทำงานของระบบแบบเรียลไทม์
+      และสามารถรีเซ็ตค่าได้ด้วยปุ่มกด (Push Button)
+    </p>
+
+    <p class="indent">
+      ฝั่งเซิร์ฟเวอร์ทำหน้าที่รับข้อมูลการแจ้งเตือนจากอุปกรณ์ผ่านโปรโตคอล HTTPS โดยมีฐานข้อมูล MySQL / SQLite
+      จัดเก็บเหตุการณ์ทั้งหมด และระบบ Nodemailer ใช้สำหรับส่งอีเมลแจ้งเตือนไปยังผู้ใช้เมื่อมีการตรวจพบเหตุบุกรุก
+      ข้อมูลทั้งหมดสามารถดูได้แบบเรียลไทม์ผ่านเว็บไซต์หลักของระบบที่พัฒนาโดย Next.js
+    </p>
+
+    <p class="indent">
+      โดยสรุป ระบบนี้เป็นต้นแบบของเทคโนโลยี IoT เพื่อความปลอดภัยที่สามารถเชื่อมต่ออินเทอร์เน็ต
+      ส่งข้อมูลแบบอัตโนมัติ และแจ้งเตือนเหตุการณ์ได้แบบเรียลไทม์ เหมาะสำหรับการประยุกต์ใช้ในพื้นที่ส่วนบุคคล
+      เช่น เรือ บ้าน หรือสถานที่ที่ต้องการการเฝ้าระวังอัตโนมัติ
+    </p>
+    
+    <div class="source">
+      <strong>Source Code</strong> :
+      <a href="https://github.com/pisitponjanton/signalgunkhamoi" target="_blank">
+        github.com/pisitponjanton/signalgunkhamoi
+      </a>
+    </div>
+
+    <!-- ฝังวิดีโอ YouTube -->
+    <div class="video">
+      <h3>วิดีโอนำเสนอผลงาน</h3>
+      <iframe src="https://www.youtube.com/embed/CEYsbxFu6YI" allowfullscreen></iframe>
+    </div>
+
+    <!-- รูปโปสเตอร์ A1 -->
+    <div class="poster">
+      <h3>โปสเตอร์โครงงาน (ขนาด A1)</h3>
+      <img src="posterA1.png" alt="โปสเตอร์โครงงาน Signal Gunkhamoi">
+    </div>
+
+  </div>
+</body>
+</html>
